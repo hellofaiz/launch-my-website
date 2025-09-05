@@ -25,8 +25,8 @@ const Header = () => {
             <Link to="/">
                 <img src="../assets/logo.png" alt="Logo" style={{ height: '50px'}} />
             </Link>
-            {/* launch my website heading */}
             <h1 className="text-2xl font-bold gradient-text">Launch My Website</h1>
+            {/* launch my website heading */}
           </motion.div>
 
           {/* Desktop Navigation */}

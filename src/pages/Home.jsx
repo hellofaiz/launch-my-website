@@ -118,8 +118,8 @@ const Home = () => {
       </head>
       <div>
         {/* Hero Section */}
-        <Section className="min-h-[90vh] flex items-center">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+        <Section className="min-h-[70vh] md:min-h-[90vh] flex items-center">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -131,9 +131,9 @@ const Home = () => {
                   initial={{ opacity: 0, scale: 0 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.3 }}
-                  className="absolute -top-8 -left-12 text-primary/20"
+                  className="absolute -top-4 -left-6 md:-top-8 md:-left-12 text-primary/20"
                 >
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="md:w-8 md:h-8">
                     <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" />
                   </svg>
                 </motion.div>
@@ -142,9 +142,9 @@ const Home = () => {
                   initial={{ opacity: 0, scale: 0 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.5 }}
-                  className="absolute -top-4 -right-8 text-accent/20"
+                  className="absolute -top-2 -right-4 md:-top-4 md:-right-8 text-accent/20"
                 >
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="md:w-6 md:h-6">
                     <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none" />
                     <circle cx="12" cy="12" r="4" fill="currentColor" />
                   </svg>
@@ -154,14 +154,14 @@ const Home = () => {
                   initial={{ opacity: 0, scale: 0 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.7 }}
-                  className="absolute top-16 -left-16 text-highlight/20"
+                  className="absolute top-8 -left-8 md:top-16 md:-left-16 text-highlight/20"
                 >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="md:w-5 md:h-5">
                     <polygon points="12,2 22,8.5 22,15.5 12,22 2,15.5 2,8.5" />
                   </svg>
                 </motion.div>
 
-                <h1 className="text-4xl md:text-6xl font-heading font-bold relative">
+                <h1 className="text-3xl md:text-6xl font-heading font-bold relative">
                   Bringing Your Digital Dreams to
                   <span className="gradient-text"> Life</span>
                 </h1>
@@ -178,18 +178,18 @@ const Home = () => {
                   </svg>
                 </motion.div>
               </div>
-              <p className="text-gray-600 text-lg mb-8 max-w-lg">
+              <p className="text-gray-600 text-base md:text-lg mb-6 md:mb-8 max-w-lg">
                 Transform your vision into reality with affordable, professional web development
                 and design services. Let's create something amazing together that drives results
                 and delights your users.
               </p>
-              <div className="flex gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="btn-primary glow"
+                  className="btn-primary glow text-sm md:text-base px-4 md:px-6 py-2 md:py-3"
                   onClick={() => {
-                    window.location.href = '/contact';
+                    window.location.href = '/pricing';
                   }}
                 >
                   Get Quote
@@ -197,7 +197,7 @@ const Home = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="btn-outline"
+                  className="btn-outline text-sm md:text-base px-4 md:px-6 py-2 md:py-3"
                   onClick={() => {
                     window.location.href = '/projects';
                   }}
@@ -210,12 +210,12 @@ const Home = () => {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="hidden md:block"
+              className="order-first md:order-last mt-8 md:mt-0"
             >
               <img
                 src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000"
                 alt="Modern Development Setup with Dual Monitors and Clean Workspace"
-                className="rounded-lg shadow-xl gradient-border hover-zoom"
+                className="rounded-lg shadow-xl gradient-border hover-zoom w-full max-w-md mx-auto md:max-w-none"
               />
             </motion.div>
           </div>
@@ -229,7 +229,7 @@ const Home = () => {
             subtitle="Delivering Excellence with a Personal Touch"
             centered
           />
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -282,7 +282,7 @@ const Home = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="grid grid-cols-2 md:grid-cols-5 gap-4"
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-4"
           >
             {skills.map((skill, index) => (
               <motion.div
@@ -307,7 +307,7 @@ const Home = () => {
             subtitle="Comprehensive Digital Services for Your Success"
             centered
           />
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
             {services.map((service, index) => (
               <motion.div
                 key={service.title}
