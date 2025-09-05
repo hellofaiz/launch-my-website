@@ -185,24 +185,24 @@ const Home = () => {
                 and delights your users.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="btn-primary glow text-sm md:text-base px-4 md:px-6 py-2 md:py-3"
-                >
-                  <Link to="/pricing">
-                    Get Quote
-                  </Link>
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="btn-outline text-sm md:text-base px-4 md:px-6 py-2 md:py-3"
-                >
-                  <Link to="/projects">
+                <Link to="/pricing">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="btn-primary glow text-sm md:text-base px-4 md:px-6 py-2 md:py-3"
+                  >
+                    Pricing
+                  </motion.button>
+                </Link>
+                <Link to="/projects">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="btn-outline text-sm md:text-base px-4 md:px-6 py-2 md:py-3"
+                  >
                     View Portfolio
-                  </Link>
-                </motion.button>
+                  </motion.button>
+                </Link>
               </div>
             </motion.div>
             <motion.div
