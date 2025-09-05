@@ -5,6 +5,7 @@ import SectionTitle from '../components/shared/SectionTitle';
 import CodeIcon from '../components/shared/icons/CodeIcon';
 import MobileIcon from '../components/shared/icons/MobileIcon';
 import DesignIcon from '../components/shared/icons/DesignIcon';
+import { Link } from 'react-router-dom';
 
 const skills = [
   'React', 'JavaScript', 'TypeScript', 'Node.js', 'Python',
@@ -188,21 +189,19 @@ const Home = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="btn-primary glow text-sm md:text-base px-4 md:px-6 py-2 md:py-3"
-                  onClick={() => {
-                    window.location.href = '/pricing';
-                  }}
                 >
-                  Get Quote
+                  <Link to="/pricing">
+                    Get Quote
+                  </Link>
                 </motion.button>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="btn-outline text-sm md:text-base px-4 md:px-6 py-2 md:py-3"
-                  onClick={() => {
-                    window.location.href = '/projects';
-                  }}
                 >
-                  View Portfolio
+                  <Link to="/projects">
+                    View Portfolio
+                  </Link>
                 </motion.button>
               </div>
             </motion.div>
