@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Modern scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: theme('colors.background.DEFAULT');
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme('colors.secondary.lighter');
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.primary.DEFAULT');
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-gray-900 font-sans min-h-screen;
+    background-image:
+      radial-gradient(at 40% 20%, rgba(37, 99, 235, 0.03) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, rgba(16, 185, 129, 0.03) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, rgba(139, 92, 246, 0.03) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-highlight to-accent bg-[length:300%_100%] animate-text-shimmer;
+  }
+  
+  .btn {
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-300 relative overflow-hidden;
+  }
+  
+  .btn-primary {
+    @apply btn bg-primary text-white shadow-lg
+    hover:bg-primary-dark hover:shadow-xl hover:shadow-primary/30 hover:scale-105;
+  }
+
+  .btn-outline {
+    @apply btn border-2 border-primary text-primary hover:bg-primary hover:text-white
+    hover:shadow-lg hover:shadow-primary/30;
+  }
+
+  .section {
+    @apply py-20 px-4 md:px-8 max-w-7xl mx-auto;
+  }
+
+  .heading {
+    @apply font-heading font-bold;
+  }
+
+  .card {
+    @apply bg-background-light border border-secondary-lighter rounded-xl p-6
+    hover:shadow-xl hover:border-primary/20 transition-all duration-500 relative;
+  }
+
+  /* Modern card hover effect */
+  /* .card::before {
+    @apply content-[''] absolute inset-0 bg-gradient-to-r from-primary via-accent to-highlight
+    opacity-0 transition-opacity duration-500 rounded-xl -z-10;
+  } */
+
+  /* .card:hover::before {
+    @apply opacity-100;
+  } */
+
+  /* Glass morphism effect */
+  .glass {
+    @apply bg-white/80 backdrop-blur-md border border-secondary-lighter rounded-xl shadow-lg;
+  }
+}
+
+/* Modern glow effects */
+.glow {
+  box-shadow: 0 0 20px theme('colors.primary.DEFAULT');
+}
+
+.glow:hover {
+  box-shadow: 0 0 30px theme('colors.accent.DEFAULT');
+}
+
+.gradient-border {
+  position: relative;
+  background: theme('colors.background.DEFAULT');
+  border-radius: 0.75rem;
+  z-index: 1;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  background: linear-gradient(45deg,
+    theme('colors.primary.DEFAULT'),
+    theme('colors.accent.DEFAULT'),
+    theme('colors.highlight.DEFAULT')
+  );
+  border-radius: 0.85rem;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  opacity: 0.3;
+}
+
+.gradient-border:hover::before {
+  opacity: 0.6;
+  animation: border-width 3s infinite alternate;
+}
+
+/* Modern hover effect for images */
+.hover-zoom {
+  @apply transition-all duration-500 hover:scale-105 hover:shadow-2xl;
+}
+
+/* Text gradient animation */
+.animate-gradient-text {
+  background: linear-gradient(
+    to right,
+    theme('colors.primary.DEFAULT'),
+    theme('colors.highlight.DEFAULT'),
+    theme('colors.accent.DEFAULT')
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-shimmer 2.5s ease-out infinite alternate;
+}
+
+@keyframes text-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
